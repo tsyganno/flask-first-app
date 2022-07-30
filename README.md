@@ -18,25 +18,19 @@
 venv\Scripts\activate
 ```
 
-4. Устанавливаем Flask.
-
-```shell
-pip install Flask
-```
-
-5. Устанавливаем все зависимотси из requrements.txt.
+4. Устанавливаем все зависимотси из requrements.txt.
 
 ```shell
 pip install -r requrements.txt
 ```
 
-6. Запускаем проект, пишем в терминале.
+5. Запускаем проект, пишем в терминале.
 
 ```shell
 flask run
 ```
 
-7. Переходим по ссылке.
+6. Переходим по ссылке.
 
 ```shell
 http://127.0.0.1:5000
