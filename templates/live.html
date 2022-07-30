@@ -5,13 +5,13 @@
     <a class="btn btn-info refresh" href="{{ url_for('live') }}">Создать новую жизнь</a>
     <div class="counter">{{ counter }}</div>
     <table class="world">
-        {% for i in x %}
+        {% for i in world %}
             <tr>
                 {% set rowloop = loop %}
                 {% for j in i %}
                     {% if j == 1 %}
                         <td class="cell living-cell"></td>
-                    {% elif  j == 0 and y[rowloop.index - 1][loop.index - 1] == 1 %}
+                    {% elif  j == 0 and old_world[rowloop.index - 1][loop.index - 1] == 1 %}
                         <td class="cell dead-cell"></td>
                     {% else %}
                         <td class="cell"></td>
