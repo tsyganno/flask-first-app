@@ -35,3 +35,9 @@ pip install -r requrements.txt
 ```shell
 flask run
 ```
+
+7. Переходим по ссылке.
+
+```shell
+http://127.0.0.1:5000
+```
