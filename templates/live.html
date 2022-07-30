@@ -7,9 +7,12 @@
     <table class="world">
         {% for i in x %}
             <tr>
+                {% set rowloop = loop %}
                 {% for j in i %}
                     {% if j == 1 %}
                         <td class="cell living-cell"></td>
+                    {% elif  j == 0 and y[rowloop.index - 1][loop.index - 1] == 1 %}
+                        <td class="cell dead-cell"></td>
                     {% else %}
                         <td class="cell"></td>
                     {% endif %}
