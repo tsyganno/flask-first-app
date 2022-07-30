@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 from game_of_life import GameOfLife
 
@@ -6,9 +6,18 @@ from game_of_life import GameOfLife
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['get', 'post'])
 def index():
-    GameOfLife(25, 25)
+    if request.method == 'POST':
+        client_message = str(request.get_data())
+        try:
+            height = int(client_message[client_message.find('height=') + 7: client_message.find('&')])
+            width = int(client_message[client_message.find('width=') + 6:][:-1])
+            GameOfLife(height, width)
+            return redirect('live')
+        except:
+            GameOfLife(25, 25)
+            return redirect('live')
     return render_template('index.html')
 
 

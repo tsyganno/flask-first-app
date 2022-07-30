@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-    <a class="btn btn-primary" href="{{ url_for('live') }}">Создать жизнь</a>
+    <form action="{{ url_for('index') }}" method="post">
+        <fieldset>
+            <legend>Введите высоту и ширину поля</legend>
+            <p>Высота <input type="text" name="height" placeholder="25 по умолчанию"></p>
+            <p>Ширина <input type="text" name="width" placeholder="25 по умолчанию"></p>
+        </fieldset>
+        <br>
+        <button class="btn btn-primary">Создать жизнь</button>
+    </form>
 {% endblock %}
