@@ -16,6 +16,7 @@ class SingletonMeta(type):
 
 class GameOfLife(metaclass=SingletonMeta):
     def __init__(self, width=20, height=20):
+        self.counter = 0
         self.__width = width
         self.__height = height
         self.world = self.generate_universe()
@@ -39,6 +40,7 @@ class GameOfLife(metaclass=SingletonMeta):
                     continue
                 new_world[i][j] = 0
         self.world = new_world
+        self.counter += 1
 
     def generate_universe(self):
         return [[random.randint(0, 1) for _ in range(self.__width)] for _ in range(self.__height)]

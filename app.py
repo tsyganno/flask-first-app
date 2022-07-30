@@ -16,7 +16,7 @@ def index():
 def live():
     y = GameOfLife()
     y.form_new_generation()
-    return render_template('live.html', x=y.world)
+    return render_template('live.html', x=y.world, counter=y.counter)
 
 
 if __name__ == '__main__':
