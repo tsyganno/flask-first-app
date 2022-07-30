@@ -24,13 +24,13 @@ venv\Scripts\activate
 pip install Flask
 ```
 
-5. Установить все зависимотси из requrements.txt.
+5. Устанавливаем все зависимотси из requrements.txt.
 
 ```shell
 pip install -r requrements.txt
 ```
 
-6. Запуск проекта, пишем в терминале.
+6. Запускаем проект, пишем в терминале.
 
 ```shell
 flask run
