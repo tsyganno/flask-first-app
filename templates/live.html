@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <a class="btn btn-warning home" href="{{ url_for('index') }}">На главную</a>
+    <a class="btn btn-info refresh" href="{{ url_for('live') }}">Создать новую жизнь</a>
+
+    <table class="world">
+        {% for i in x %}
+            <tr>
+                {% for j in i %}
+                    {% if j == 1 %}
+                        <td class="cell living-cell"></td>
+                    {% else %}
+                        <td class="cell"></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
